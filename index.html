@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Cleaning — Преміум клінінг у Києві</title>
+    <meta name="description"
+        content="Super Cleaning — професійний преміум клінінг у Києві. Прибирання квартир, будинків та офісів. Бездоганна чистота для вашого простору.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Unbounded:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">Super<span class="logo-accent">Cleaning</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Послуги</a></li>
+                <li><a href="#portfolio">Портфоліо</a></li>
+                <li><a href="#map">Район</a></li>
+                <li><a href="#clients">Клієнти</a></li>
+                <li><a href="#booking">Замовити</a></li>
+            </ul>
+            <a href="#booking" class="nav-cta">Замовити</a>
+            <button class="nav-burger" id="navBurger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+        <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+        <div class="hero-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+        <div class="hero-content" data-parallax="0.3">
+            <div class="hero-badge">✦ Преміум клінінг у Києві</div>
+            <h1 class="hero-title">
+                Бездоганна чистота<br>
+                <span class="hero-title-accent">для вашого простору</span>
+            </h1>
+            <p class="hero-subtitle">
+                Професійне прибирання квартир, будинків та офісів у Києві.
+                Ми перетворюємо ваш простір на ідеально чисте середовище.
+            </p>
+            <div class="hero-actions">
+                <a href="#booking" class="btn btn-primary">
+                    <span>Замовити прибирання</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="#services" class="btn btn-secondary">Наші послуги</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number" data-count="5000">0</span>
+                    <span class="hero-stat-label">прибирань на місяць</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number" data-count="98">0</span>
+                    <span class="hero-stat-label">% задоволених клієнтів</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number" data-count="7">0</span>
+                    <span class="hero-stat-label">років досвіду</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Прокрутіть вниз</span>
+        </div>
+    </section>
+
+    <!-- ========== SEAMLESS TRANSITION ========== -->
+    <div class="flow-transition flow-hero-services">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,40 C360,120 1080,0 1440,80 L1440,120 L0,120 Z" fill="var(--color-bg)" />
+        </svg>
+    </div>
+
+    <!-- ========== SERVICES — Bento-Switch Grid ========== -->
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header" data-reveal>
+                <span class="section-tag">Наші послуги</span>
+                <h2 class="section-title">Ідеальна чистота<br>для кожного простору</h2>
+                <p class="section-desc">Наведіть на блок — і він розкриє свою мікровсесвіт</p>
+            </div>
+
+            <!-- ===== BENTO GRID ===== -->
+            <div class="bento-grid" id="bentoGrid" data-reveal>
+                <!-- Cell 1: Квартири (large — spans 2 cols) -->
+                <div class="bento-cell bento-cell--apartments" data-service="apartment" data-rate="150">
+                    <div class="bento-cell__bg">
+                        <canvas class="bento-sparkle-canvas" data-sparkle></canvas>
+                    </div>
+                    <div class="bento-cell__border-glow"></div>
+                    <div class="bento-cell__content">
+                        <div class="bento-cell__header">
+                            <div class="bento-cell__icon">
+                                <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+                                    <rect x="8" y="6" width="32" height="36" rx="3" stroke="currentColor"
+                                        stroke-width="2.5" />
+                                    <rect x="14" y="12" width="8" height="6" rx="1" stroke="currentColor"
+                                        stroke-width="2" />
+                                    <rect x="26" y="12" width="8" height="6" rx="1" stroke="currentColor"
+                                        stroke-width="2" />
+                                    <rect x="19" y="32" width="10" height="10" rx="1" stroke="currentColor"
+                                        stroke-width="2.5" />
+                                </svg>
+                            </div>
+                            <span class="bento-cell__num">01</span>
+                        </div>
+                        <h3 class="bento-cell__title">Квартири</h3>
+                        <p class="bento-cell__desc">Комплексне прибирання квартир будь-якої площі з детальною увагою до
+                            кожного куточка вашого дому.</p>
+                        <ul class="bento-cell__features">
+                            <li>Генеральне прибирання</li>
+                            <li>Підтримуюче прибирання</li>
+                            <li>Після ремонту</li>
+                        </ul>
+                        <div class="bento-cell__price">від <strong>2 500</strong> грн</div>
+                    </div>
+                    <!-- Mini-calculator (shown on hover/active) -->
+                    <div class="bento-cell__calc">
+                        <div class="bento-calc__label">Розрахунок вартості</div>
+                        <div class="bento-calc__row">
+                            <input type="range" class="bento-calc__slider" min="20" max="200" value="50"
+                                data-calc-slider>
+                            <span class="bento-calc__area" data-calc-area>50 м²</span>
+                        </div>
+                        <div class="bento-calc__result">≈ <strong data-calc-price>5 750</strong> грн</div>
+                    </div>
+                </div>
+
+                <!-- Cell 2: Приватні будинки -->
+                <div class="bento-cell bento-cell--houses" data-service="house" data-rate="150">
+                    <div class="bento-cell__bg">
+                        <div class="bento-curtain">
+                            <div class="bento-curtain__fabric"></div>
+                            <div class="bento-curtain__fabric bento-curtain__fabric--2"></div>
+                        </div>
+                    </div>
+                    <div class="bento-cell__border-glow"></div>
+                    <div class="bento-cell__content">
+                        <div class="bento-cell__header">
+                            <div class="bento-cell__icon">
+                                <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+                                    <path d="M6 22L24 6l18 16" stroke="currentColor" stroke-width="2.5"
+                                        stroke-linecap="round" />
+                                    <path d="M10 20v18a2 2 0 002 2h24a2 2 0 002-2V20" stroke="currentColor"
+                                        stroke-width="2.5" />
+                                    <rect x="18" y="28" width="12" height="12" rx="1" stroke="currentColor"
+                                        stroke-width="2.5" />
+                                </svg>
+                            </div>
+                            <span class="bento-cell__num">02</span>
+                        </div>
+                        <h3 class="bento-cell__title">Приватні будинки</h3>
+                        <p class="bento-cell__desc">Повний догляд включаючи тераси, балкони та прибудинкову територію.
+                        </p>
+                        <ul class="bento-cell__features">
+                            <li>Мийка вікон та фасадів</li>
+                            <li>Догляд за територією</li>
+                            <li>Сезонне прибирання</li>
+                        </ul>
+                        <div class="bento-cell__price">від <strong>3 700</strong> грн</div>
+                    </div>
+                    <div class="bento-cell__calc">
+                        <div class="bento-calc__label">Розрахунок вартості</div>
+                        <div class="bento-calc__row">
+                            <input type="range" class="bento-calc__slider" min="60" max="500" value="120"
+                                data-calc-slider>
+                            <span class="bento-calc__area" data-calc-area>120 м²</span>
+                        </div>
+                        <div class="bento-calc__result">≈ <strong data-calc-price>15 600</strong> грн</div>
+                    </div>
+                </div>
+
+                <!-- Cell 3: Офіси -->
+                <div class="bento-cell bento-cell--offices" data-service="office" data-rate="45">
+                    <div class="bento-cell__bg">
+                        <div class="bento-cityglow">
+                            <div class="bento-cityglow__layer bento-cityglow__layer--1"></div>
+                            <div class="bento-cityglow__layer bento-cityglow__layer--2"></div>
+                            <div class="bento-cityglow__layer bento-cityglow__layer--3"></div>
+                        </div>
+                    </div>
+                    <div class="bento-cell__border-glow"></div>
+                    <div class="bento-cell__content">
+                        <div class="bento-cell__header">
+                            <div class="bento-cell__icon">
+                                <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+                                    <rect x="6" y="14" width="36" height="28" rx="3" stroke="currentColor"
+                                        stroke-width="2.5" />
+                                    <path d="M16 14V10a4 4 0 014-4h8a4 4 0 014 4v4" stroke="currentColor"
+                                        stroke-width="2.5" />
+                                    <path d="M6 24h36" stroke="currentColor" stroke-width="2.5" />
+                                </svg>
+                            </div>
+                            <span class="bento-cell__num">03</span>
+                        </div>
+                        <h3 class="bento-cell__title">Офіси</h3>
+                        <p class="bento-cell__desc">Чистий офіс — продуктивна команда. Регулярний догляд за робочим
+                            простором.</p>
+                        <ul class="bento-cell__features">
+                            <li>Щоденне обслуговування</li>
+                            <li>Хімчистка меблів</li>
+                            <li>Дезінфекція приміщень</li>
+                        </ul>
+                        <div class="bento-cell__price"><strong>45–150</strong> грн/м²</div>
+                    </div>
+                    <div class="bento-cell__calc">
+                        <div class="bento-calc__label">Розрахунок вартості</div>
+                        <div class="bento-calc__row">
+                            <input type="range" class="bento-calc__slider" min="40" max="1000" value="100"
+                                data-calc-slider>
+                            <span class="bento-calc__area" data-calc-area>100 м²</span>
+                        </div>
+                        <div class="bento-calc__result">≈ <strong data-calc-price>5 500</strong> грн</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ADDITIONAL SERVICES — Spa Menu Split Scroll ===== -->
+            <div class="addserv-section" data-reveal data-reveal-delay="200">
+                <div class="spa-menu">
+                    <!-- Left sticky heading -->
+                    <div class="spa-menu__left">
+                        <span class="addserv-tag">Додаткові послуги</span>
+                        <h3 class="spa-menu__heading">Все для<br>бездоганного<br><span class="addserv-title-accent">простору</span></h3>
+                        <div class="spa-menu__accent-line"></div>
+                        <p class="spa-menu__sub">Обирайте додаткові послуги для ідеального результату</p>
+                    </div>
+
+                    <!-- Right service cards -->
+                    <div class="spa-menu__right">
+                        <div class="spa-card" data-spa-reveal>
+                            <div class="spa-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3" />
+                                    <path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3z" />
+                                    <line x1="12" y1="18" x2="12" y2="22" />
+                                    <line x1="8" y1="22" x2="16" y2="22" />
+                                </svg>
+                            </div>
+                            <div class="spa-card__content">
+                                <h4 class="spa-card__title">Хімчистка меблів</h4>
+                                <p class="spa-card__desc">Глибока екстракційна чистка оббивки. Видалення плям та алергенів.</p>
+                                <div class="spa-card__footer">
+                                    <span class="spa-card__price">від 120 грн</span>
+                                    <a href="services/himchystka.html" class="spa-card__btn">Детальніше →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spa-card" data-spa-reveal>
+                            <div class="spa-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                                    <line x1="3" y1="9" x2="21" y2="9" />
+                                    <line x1="9" y1="3" x2="9" y2="21" />
+                                </svg>
+                            </div>
+                            <div class="spa-card__content">
+                                <h4 class="spa-card__title">Мийка вікон</h4>
+                                <p class="spa-card__desc">Професійна мийка склопакетів, рам та підвіконь. Технологія squeegee.</p>
+                                <div class="spa-card__footer">
+                                    <span class="spa-card__price">від 75 грн/м²</span>
+                                    <a href="services/vikna.html" class="spa-card__btn">Детальніше →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spa-card" data-spa-reveal>
+                            <div class="spa-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 20h20" />
+                                    <path d="M5 20V7l7-4 7 4v13" />
+                                    <path d="M9 20v-4h6v4" />
+                                    <path d="M9 10h.01" />
+                                    <path d="M15 10h.01" />
+                                </svg>
+                            </div>
+                            <div class="spa-card__content">
+                                <h4 class="spa-card__title">Після ремонту</h4>
+                                <p class="spa-card__desc">Видалення будівельного пилу, залишків клею та фарби до ідеального блиску.</p>
+                                <div class="spa-card__footer">
+                                    <span class="spa-card__price">від 4 000 грн</span>
+                                    <a href="services/remont.html" class="spa-card__btn">Детальніше →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spa-card" data-spa-reveal>
+                            <div class="spa-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                                    <path d="M12 2a14 14 0 0 0 0 20" />
+                                    <path d="M12 2a14 14 0 0 1 0 20" />
+                                    <path d="M2 12h20" />
+                                </svg>
+                            </div>
+                            <div class="spa-card__content">
+                                <h4 class="spa-card__title">Дезінфекція</h4>
+                                <p class="spa-card__desc">Обробка холодним туманом. Знищення 99.9% бактерій та вірусів.</p>
+                                <div class="spa-card__footer">
+                                    <span class="spa-card__price">від 1 500 грн</span>
+                                    <a href="#booking" class="spa-card__btn">Замовити →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spa-card" data-spa-reveal>
+                            <div class="spa-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="6" width="20" height="12" rx="2" />
+                                    <path d="M2 10h20" />
+                                    <path d="M6 14h4" />
+                                </svg>
+                            </div>
+                            <div class="spa-card__content">
+                                <h4 class="spa-card__title">Прання килимів</h4>
+                                <p class="spa-card__desc">Глибока чистка килимових покриттів методом гарячої екстракції.</p>
+                                <div class="spa-card__footer">
+                                    <span class="spa-card__price">від 55 грн/м²</span>
+                                    <a href="services/kylym.html" class="spa-card__btn">Детальніше →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spa-card" data-spa-reveal>
+                            <div class="spa-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                            </div>
+                            <div class="spa-card__content">
+                                <h4 class="spa-card__title">Генеральне прибирання</h4>
+                                <p class="spa-card__desc">Комплексне глибоке прибирання від стелі до підлоги з усім обладнанням.</p>
+                                <div class="spa-card__footer">
+                                    <span class="spa-card__price">від 2 800 грн</span>
+                                    <a href="services/generalne.html" class="spa-card__btn">Детальніше →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PREMIUM QUALITY (Bento grid redesign) ========== -->
+    <section class="premium" id="premium">
+        <div class="section-container">
+            <div class="section-header" data-reveal>
+                <span class="section-tag">Наш підхід</span>
+                <h2 class="section-title">Преміальна якість<br><span class="title-accent-lime">у кожній деталі</span>
+                </h2>
+            </div>
+
+            <div class="premium-bento" data-reveal>
+                <!-- Big hero card -->
+                <div class="premium-bento-hero">
+                    <div class="premium-bento-card premium-card-dark">
+                        <div class="premium-card-bg-pattern"></div>
+                        <div class="premium-card-content">
+                            <div class="premium-big-number" data-count="7">0</div>
+                            <div class="premium-big-label">років бездоганної<br>чистоти</div>
+                            <p class="premium-card-text">Super Cleaning — це не просто клінінг. Це філософія бездоганної
+                                чистоти з використанням сертифікованих екологічних засобів та обладнання швейцарського
+                                виробництва.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right column: 3 stacked cards -->
+                <div class="premium-bento-stack">
+                    <div class="premium-bento-card premium-card-eco" data-reveal data-reveal-delay="100">
+                        <div class="premium-card-icon-new">🌿</div>
+                        <div class="premium-card-info">
+                            <h4>Екологічні засоби</h4>
+                            <p>Безпечні для дітей та алергіків. Ecocert та EU Ecolabel.</p>
+                        </div>
+                        <div class="premium-card-badge">Ecocert</div>
+                    </div>
+
+                    <div class="premium-bento-card premium-card-staff" data-reveal data-reveal-delay="200">
+                        <div class="premium-card-icon-new">👨‍🔬</div>
+                        <div class="premium-card-info">
+                            <h4>Навчений персонал</h4>
+                            <p>120+ годин навчання та щоквартальна атестація.</p>
+                        </div>
+                        <div class="premium-card-stat">
+                            <span class="stat-number">120+</span>
+                            <span class="stat-unit">годин</span>
+                        </div>
+                    </div>
+
+                    <div class="premium-bento-card premium-card-guarantee" data-reveal data-reveal-delay="300">
+                        <div class="premium-card-icon-new">🛡️</div>
+                        <div class="premium-card-info">
+                            <h4>Гарантія якості</h4>
+                            <p>Безкоштовне повторне прибирання протягом 24 годин.</p>
+                        </div>
+                        <div class="premium-card-stat">
+                            <span class="stat-number">24</span>
+                            <span class="stat-unit">год</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PORTFOLIO (Before/After) ========== -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-container">
+            <div class="section-header" data-reveal>
+                <span class="section-tag">Портфоліо</span>
+                <h2 class="section-title">Наші результати<br>говорять самі за себе</h2>
+                <p class="section-desc">Перетягніть слайдер, щоб порівняти до та після</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-reveal data-reveal-delay="0">
+                    <div class="ba-slider" id="baSlider1">
+                        <div class="ba-before">
+                            <img src="images/apartment_before.png" alt="Квартира до прибирання">
+                            <span class="ba-label ba-label-before">До</span>
+                        </div>
+                        <div class="ba-after">
+                            <img src="images/apartment_after.png" alt="Квартира після прибирання">
+                            <span class="ba-label ba-label-after">Після</span>
+                        </div>
+                        <div class="ba-handle">
+                            <div class="ba-handle-line"></div>
+                            <div class="ba-handle-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M8 4l-6 8 6 8" />
+                                    <path d="M16 4l6 8-6 8" />
+                                </svg>
+                            </div>
+                            <div class="ba-handle-line"></div>
+                        </div>
+                    </div>
+                    <div class="portfolio-caption">
+                        <h4>Квартира, 85 м²</h4>
+                        <span>Печерський район</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-reveal data-reveal-delay="100">
+                    <div class="ba-slider" id="baSlider2">
+                        <div class="ba-before">
+                            <img src="images/office_before.png" alt="Офіс до прибирання">
+                            <span class="ba-label ba-label-before">До</span>
+                        </div>
+                        <div class="ba-after">
+                            <img src="images/office_after.png" alt="Офіс після прибирання">
+                            <span class="ba-label ba-label-after">Після</span>
+                        </div>
+                        <div class="ba-handle">
+                            <div class="ba-handle-line"></div>
+                            <div class="ba-handle-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M8 4l-6 8 6 8" />
+                                    <path d="M16 4l6 8-6 8" />
+                                </svg>
+                            </div>
+                            <div class="ba-handle-line"></div>
+                        </div>
+                    </div>
+                    <div class="portfolio-caption">
+                        <h4>Офіс, 200 м²</h4>
+                        <span>Шевченківський район</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SEAMLESS TRANSITION ========== -->
+    <div class="flow-transition flow-services-map">
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+            <path d="M0,80 C480,160 960,0 1440,80 L1440,160 L0,160 Z" fill="var(--color-dark)" />
+        </svg>
+    </div>
+
+    <!-- ========== MAP SECTION ========== -->
+    <section class="map-section" id="map">
+        <div class="section-container">
+            <div class="section-header section-header-light" data-reveal>
+                <span class="section-tag section-tag-light">Географія</span>
+                <h2 class="section-title section-title-light">Ми працюємо<br>по всьому Києву</h2>
+                <p class="section-desc section-desc-light">Клікніть на маркер, щоб побачити статистику</p>
+            </div>
+        </div>
+        <div class="map-wrapper" data-reveal>
+            <div id="mapContainer" class="map-container"></div>
+            <div class="map-click-overlay" id="mapClickOverlay">
+                <span class="map-click-hint">Натисніть, щоб взаємодіяти з картою</span>
+            </div>
+            <div class="map-overlay-gradient"></div>
+        </div>
+    </section>
+
+    <!-- ========== SEAMLESS TRANSITION ========== -->
+    <div class="flow-transition flow-map-clients">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C320,0 720,120 1440,40 L1440,120 L0,120 Z" fill="var(--color-bg)" />
+        </svg>
+    </div>
+
+    <!-- ========== OUR CLIENTS — Trust & Prestige ========== -->
+    <section class="clients clients--light" id="clients">
+        <div class="section-container">
+
+            <!-- Key Ceremony Visual -->
+            <div class="key-ceremony" data-reveal>
+                <!-- Pulse waves -->
+                <div class="key-pulse key-pulse--1"></div>
+                <div class="key-pulse key-pulse--2"></div>
+                <div class="key-pulse key-pulse--3"></div>
+
+                <!-- Floating particles -->
+                <div class="key-particles">
+                    <span class="key-particle"></span>
+                    <span class="key-particle"></span>
+                    <span class="key-particle"></span>
+                    <span class="key-particle"></span>
+                    <span class="key-particle"></span>
+                    <span class="key-particle"></span>
+                </div>
+
+                <!-- Key icon on cushion -->
+                <div class="key-visual">
+                    <div class="key-cushion">
+                        <svg class="key-icon" width="64" height="64" viewBox="0 0 64 64" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <!-- Key ring -->
+                            <circle cx="22" cy="22" r="12" stroke="currentColor" stroke-width="2.5" />
+                            <circle cx="22" cy="22" r="5" stroke="currentColor" stroke-width="1.5" opacity="0.5" />
+                            <!-- Key 1 shaft -->
+                            <path d="M32 28L54 50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <!-- Key 1 teeth -->
+                            <path d="M46 44L50 40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <path d="M50 48L54 44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <!-- Key 2 shaft -->
+                            <path d="M28 32L42 56" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                opacity="0.6" />
+                            <!-- Key 2 teeth -->
+                            <path d="M37 49L41 47" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                opacity="0.6" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Messaging -->
+            <div class="clients-copy" data-reveal data-reveal-delay="200">
+                <h2 class="clients-headline">
+                    <span class="clients-num">450+</span> власників нерухомості<br>
+                    в Києві вже <span class="clients-accent">довірили</span> нам свої ключі
+                </h2>
+                <p class="clients-sub">
+                    Ваша приватність і безпека — наш найвищий пріоритет.
+                </p>
+            </div>
+
+            <!-- Trust Stats -->
+            <div class="clients-stats" data-reveal data-reveal-delay="400">
+                <div class="clients-stat">
+                    <svg class="clients-stat__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    <span class="clients-stat__num">450+</span>
+                    <span class="clients-stat__label">Постійних клієнтів</span>
+                </div>
+                <div class="clients-stat__divider"></div>
+                <div class="clients-stat">
+                    <svg class="clients-stat__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    <span class="clients-stat__num">5+</span>
+                    <span class="clients-stat__label">Років досвіду</span>
+                </div>
+                <div class="clients-stat__divider"></div>
+                <div class="clients-stat">
+                    <svg class="clients-stat__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 11 12 14 22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    <span class="clients-stat__num">12к+</span>
+                    <span class="clients-stat__label">Виконаних замовлень</span>
+                </div>
+            </div>
+
+            <!-- Prestige Marquee — ЖК Logos -->
+            <div class="clients-marquee-section" data-reveal data-reveal-delay="500">
+                <span class="clients-marquee-label">⬦ Географія присутності</span>
+
+                <div class="marquee-track-outer">
+                    <div class="marquee-fade marquee-fade--left"></div>
+                    <div class="marquee-fade marquee-fade--right"></div>
+
+                    <div class="marquee-track" id="clientsMarquee">
+                        <div class="marquee-slide">
+                            <div class="marquee-item" data-tooltip="Обслужено 45 квартир за останній місяць">
+                                <span class="marquee-name">Новопечерські Липки</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 28 апартаментів за останній місяць">
+                                <span class="marquee-name">Jack House</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 33 квартири за останній місяць">
+                                <span class="marquee-name">Taryan Towers</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 51 квартиру за останній місяць">
+                                <span class="marquee-name">Tetris Hall</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 19 апартаментів за останній місяць">
+                                <span class="marquee-name">Signature</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 37 квартир за останній місяць">
+                                <span class="marquee-name">Skyline</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 42 квартири за останній місяць">
+                                <span class="marquee-name">Obolon Residences</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 26 квартир за останній місяць">
+                                <span class="marquee-name">Diamond Hill</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 31 квартиру за останній місяць">
+                                <span class="marquee-name">Podil Plaza</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 22 апартаменти за останній місяць">
+                                <span class="marquee-name">Park Avenue</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 18 апартаментів за останній місяць">
+                                <span class="marquee-name">Seven</span>
+                            </div>
+                        </div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="marquee-slide" aria-hidden="true">
+                            <div class="marquee-item" data-tooltip="Обслужено 45 квартир за останній місяць">
+                                <span class="marquee-name">Новопечерські Липки</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 28 апартаментів за останній місяць">
+                                <span class="marquee-name">Jack House</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 33 квартири за останній місяць">
+                                <span class="marquee-name">Taryan Towers</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 51 квартиру за останній місяць">
+                                <span class="marquee-name">Tetris Hall</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 19 апартаментів за останній місяць">
+                                <span class="marquee-name">Signature</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 37 квартир за останній місяць">
+                                <span class="marquee-name">Skyline</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 42 квартири за останній місяць">
+                                <span class="marquee-name">Obolon Residences</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 26 квартир за останній місяць">
+                                <span class="marquee-name">Diamond Hill</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 31 квартиру за останній місяць">
+                                <span class="marquee-name">Podil Plaza</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 22 апартаменти за останній місяць">
+                                <span class="marquee-name">Park Avenue</span>
+                            </div>
+                            <div class="marquee-item" data-tooltip="Обслужено 18 апартаментів за останній місяць">
+                                <span class="marquee-name">Seven</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SEAMLESS TRANSITION ========== -->
+    <div class="flow-transition flow-clients-booking">
+        <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+            <path d="M0,100 C360,20 1080,140 1440,60 L1440,140 L0,140 Z" fill="var(--color-dark)" />
+        </svg>
+    </div>
+
+    <!-- ========== INTERACTIVE BOOKING FORM ========== -->
+    <section class="booking" id="booking">
+        <div class="section-container">
+            <div class="booking-layout">
+                <div class="booking-info" data-reveal>
+                    <span class="section-tag section-tag-light">Замовити прибирання</span>
+                    <h2 class="section-title section-title-light">Готові до<br><span class="title-accent">бездоганної
+                            чистоти?</span></h2>
+                    <p class="booking-desc">Оберіть тип приміщення, вкажіть площу та зручну дату. Ми зв'яжемося з вами
+                        протягом 15 хвилин.</p>
+                    <div class="contact-details">
+                        <a href="tel:+380501234567" class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                                </svg>
+                            </div>
+                            <span>+38 (050) 123-45-67</span>
+                        </a>
+                        <a href="mailto:info@supercleaning.kyiv.ua" class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <path d="M22 6l-10 7L2 6" />
+                                </svg>
+                            </div>
+                            <span>info@supercleaning.kyiv.ua</span>
+                        </a>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                            </div>
+                            <span>Пн—Сб: 08:00 — 20:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multi-step booking form -->
+                <div class="booking-wizard" id="bookingWizard" data-reveal data-reveal-delay="100">
+                    <div class="wizard-glass"></div>
+                    <div class="wizard-content">
+                        <!-- Progress bar -->
+                        <div class="wizard-progress">
+                            <div class="wizard-step-indicator active" data-step="1">
+                                <span class="step-num">1</span>
+                                <span class="step-label">Тип</span>
+                            </div>
+                            <div class="wizard-step-line"></div>
+                            <div class="wizard-step-indicator" data-step="2">
+                                <span class="step-num">2</span>
+                                <span class="step-label">Площа</span>
+                            </div>
+                            <div class="wizard-step-line"></div>
+                            <div class="wizard-step-indicator" data-step="3">
+                                <span class="step-num">3</span>
+                                <span class="step-label">Дата</span>
+                            </div>
+                            <div class="wizard-step-line"></div>
+                            <div class="wizard-step-indicator" data-step="4">
+                                <span class="step-num">4</span>
+                                <span class="step-label">Контакти</span>
+                            </div>
+                        </div>
+
+                        <!-- Step 1: Type -->
+                        <div class="wizard-panel active" id="wizardStep1">
+                            <h3 class="wizard-title">Тип нерухомості</h3>
+                            <p class="wizard-subtitle">Оберіть ваш простір</p>
+                            <div class="type-grid">
+                                <label class="type-option">
+                                    <input type="radio" name="propertyType" value="apartment">
+                                    <div class="type-card">
+                                        <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+                                            <rect x="8" y="6" width="32" height="36" rx="3" stroke="currentColor"
+                                                stroke-width="2.5" />
+                                            <rect x="14" y="12" width="8" height="6" rx="1" stroke="currentColor"
+                                                stroke-width="2" />
+                                            <rect x="26" y="12" width="8" height="6" rx="1" stroke="currentColor"
+                                                stroke-width="2" />
+                                            <rect x="19" y="32" width="10" height="10" rx="1" stroke="currentColor"
+                                                stroke-width="2.5" />
+                                        </svg>
+                                        <span>Квартира</span>
+                                    </div>
+                                </label>
+                                <label class="type-option">
+                                    <input type="radio" name="propertyType" value="house">
+                                    <div class="type-card">
+                                        <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+                                            <path d="M6 22L24 6l18 16" stroke="currentColor" stroke-width="2.5"
+                                                stroke-linecap="round" />
+                                            <path d="M10 20v18a2 2 0 002 2h24a2 2 0 002-2V20" stroke="currentColor"
+                                                stroke-width="2.5" />
+                                            <rect x="18" y="28" width="12" height="12" rx="1" stroke="currentColor"
+                                                stroke-width="2.5" />
+                                        </svg>
+                                        <span>Будинок</span>
+                                    </div>
+                                </label>
+                                <label class="type-option">
+                                    <input type="radio" name="propertyType" value="office">
+                                    <div class="type-card">
+                                        <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+                                            <rect x="6" y="14" width="36" height="28" rx="3" stroke="currentColor"
+                                                stroke-width="2.5" />
+                                            <path d="M16 14V10a4 4 0 014-4h8a4 4 0 014 4v4" stroke="currentColor"
+                                                stroke-width="2.5" />
+                                            <path d="M6 24h36" stroke="currentColor" stroke-width="2.5" />
+                                        </svg>
+                                        <span>Офіс</span>
+                                    </div>
+                                </label>
+                                <label class="type-option">
+                                    <input type="radio" name="propertyType" value="commercial">
+                                    <div class="type-card">
+                                        <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+                                            <path d="M8 42V12a4 4 0 014-4h24a4 4 0 014 4v30" stroke="currentColor"
+                                                stroke-width="2.5" />
+                                            <path d="M4 42h40" stroke="currentColor" stroke-width="2.5"
+                                                stroke-linecap="round" />
+                                            <rect x="16" y="14" width="6" height="6" rx="1" stroke="currentColor"
+                                                stroke-width="2" />
+                                            <rect x="26" y="14" width="6" height="6" rx="1" stroke="currentColor"
+                                                stroke-width="2" />
+                                        </svg>
+                                        <span>Комерційний об'єкт</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Area & Price -->
+                        <div class="wizard-panel" id="wizardStep2">
+                            <h3 class="wizard-title">Площа та ціна</h3>
+                            <p class="wizard-subtitle">Вкажіть площу для розрахунку вартості</p>
+                            <div class="price-display">
+                                <span class="price-label-top">ВАРТІСТЬ ВІД:</span>
+                                <div class="price-amount">
+                                    <span class="price-big" id="priceValue">1 480</span>
+                                    <span class="price-currency">грн</span>
+                                </div>
+                                <span class="price-area" id="areaDisplay">Площа: 37 м²</span>
+                            </div>
+                            <div class="range-slider-container">
+                                <input type="range" id="areaSlider" min="20" max="500" value="37" class="range-slider">
+                                <div class="range-labels">
+                                    <span>20 м²</span>
+                                    <span>500 м²</span>
+                                </div>
+                            </div>
+                            <div class="wizard-nav">
+                                <button class="btn btn-back" id="backToStep1">Назад</button>
+                                <button class="btn btn-primary btn-next" id="toStep3">Далі</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Date -->
+                        <div class="wizard-panel" id="wizardStep3">
+                            <h3 class="wizard-title">Оберіть дату</h3>
+                            <p class="wizard-subtitle">Коли вам зручно?</p>
+                            <div class="calendar" id="calendar">
+                                <div class="calendar-header">
+                                    <button class="calendar-nav" id="calPrev">←</button>
+                                    <span class="calendar-month" id="calMonth"></span>
+                                    <button class="calendar-nav" id="calNext">→</button>
+                                </div>
+                                <div class="calendar-weekdays">
+                                    <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Нд</span>
+                                </div>
+                                <div class="calendar-days" id="calDays"></div>
+                            </div>
+                            <div class="wizard-nav">
+                                <button class="btn btn-back" id="backToStep2">Назад</button>
+                                <button class="btn btn-primary btn-next" id="toStep4">Далі</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Contact info -->
+                        <div class="wizard-panel" id="wizardStep4">
+                            <h3 class="wizard-title">Ваші контакти</h3>
+                            <p class="wizard-subtitle">Залиште ваші дані і ми зв'яжемося з вами</p>
+                            <div class="contact-form-fields">
+                                <div class="form-field">
+                                    <label class="form-label" for="clientName">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                            <circle cx="12" cy="7" r="4"/>
+                                        </svg>
+                                        Ваше ім'я
+                                    </label>
+                                    <input type="text" id="clientName" class="form-input" placeholder="Олександр" autocomplete="name">
+                                    <span class="form-field-error" id="nameError">Будь ласка, введіть ваше ім'я</span>
+                                </div>
+                                <div class="form-field">
+                                    <label class="form-label" for="clientPhone">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                                        </svg>
+                                        Номер телефону
+                                    </label>
+                                    <input type="tel" id="clientPhone" class="form-input" placeholder="+380 (__)  ___-__-__" autocomplete="tel">
+                                    <span class="form-field-error" id="phoneError">Будь ласка, введіть коректний номер телефону</span>
+                                </div>
+                            </div>
+                            <div class="wizard-nav">
+                                <button class="btn btn-back" id="backToStep3">Назад</button>
+                                <button class="btn btn-primary btn-next" id="submitBooking">Відправити заявку</button>
+                            </div>
+                        </div>
+
+                        <!-- Success state -->
+                        <div class="wizard-panel" id="wizardSuccess">
+                            <div class="success-state">
+                                <div class="success-icon">✓</div>
+                                <h3>Заявку надіслано!</h3>
+                                <p>Ми зв'яжемося з вами протягом 15 хвилин</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <span class="logo-icon">✦</span>
+                        <span class="logo-text">Super<span class="logo-accent">Cleaning</span></span>
+                    </a>
+                    <p class="footer-desc">Преміум клінінг сервіс у Києві. Бездоганна чистота для вашого простору з 2019
+                        року.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Послуги</h4>
+                    <a href="#services">Квартири</a>
+                    <a href="#services">Будинки</a>
+                    <a href="#services">Офіси</a>
+                    <a href="#services">Комерційні</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Компанія</h4>
+                    <a href="#portfolio">Портфоліо</a>
+                    <a href="#clients">Клієнти</a>
+                    <a href="#map">Райони</a>
+                    <a href="#booking">Замовити</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Super Cleaning. Усі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

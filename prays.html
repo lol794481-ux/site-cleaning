@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ціни на клінінг у Києві | 2026</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    :root {
+      --bg: var(--tg-theme-bg-color, #fff);
+      --text: var(--tg-theme-text-color, #000);
+      --hint: var(--tg-theme-hint-color, #8e8e93);
+      --btn: var(--tg-theme-button-color, #3390ec);
+      --btn-text: var(--tg-theme-button-text-color, #fff);
+      --sec-bg: var(--tg-theme-secondary-bg-color, #f5f5f7);
+      --border: rgba(0,0,0,0.08);
+      --green: #34c759;
+      --orange: #ff9500;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+    .container { max-width: 720px; margin: 0 auto; }
+    
+    h1 { font-size: 24px; margin: 0 0 8px; font-weight: 800; }
+    .subtitle { color: var(--hint); margin-bottom: 24px; font-size: 14px; }
+    
+    .card { background: var(--sec-bg); border-radius: 16px; padding: 16px; margin-bottom: 16px; }
+    .card-title { font-weight: 700; font-size: 18px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    
+    .price-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .price-row:last-child { border-bottom: none; }
+    .price-name { font-weight: 500; }
+    .price-value { font-weight: 700; color: var(--btn); white-space: nowrap; margin-left: 12px; }
+    .price-unit { font-size: 12px; color: var(--hint); font-weight: 400; }
+    
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; margin-left: 8px; }
+    .badge.min { background: #e8f5e9; color: #2e7d32; }
+    .badge.mid { background: #fff3e0; color: #ef6c00; }
+    .badge.prem { background: #e3f2fd; color: #1565c0; }
+    
+    .note { font-size: 12px; color: var(--hint); margin-top: 8px; padding: 8px; background: rgba(0,0,0,0.03); border-radius: 8px; }
+    
+    .cta-btn { display: block; width: 100%; padding: 14px; background: var(--btn); color: var(--btn-text); border: none; border-radius: 12px; font-size: 16px; font-weight: 600; margin-top: 20px; cursor: pointer; text-align: center; text-decoration: none; }
+    
+    @media (min-width: 768px) {
+      .container { max-width: 800px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💰 Ціни на клінінг у Києві</h1>
+    <div class="subtitle">Актуально на травень 2026 • Вартість вказана за 1 м², якщо не зазначено інше</div>
+
+    <!-- Основне прибирання -->
+    <div class="card">
+      <div class="card-title">🏠 Прибирання за типом приміщення</div>
+      
+      <div class="price-row">
+        <span class="price-name">Квартира <span class="badge mid">попит</span></span>
+        <span><span class="price-value">115</span> <span class="price-unit">грн/м²</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-name">Приватний будинок</span>
+        <span><span class="price-value">130</span> <span class="price-unit">грн/м²</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-name">Офіс / комерція</span>
+        <span><span class="price-value">55</span> <span class="price-unit">грн/м²</span></span>
+      </div>
+      <div class="note">📌 Ціна залежить від площі: чим більша площа — тим нижча вартість за м². Мінімальне замовлення: 1 500 грн.</div>
+    </div>
+
+    <!-- Типи уборки -->
+    <div class="card">
+      <div class="card-title">⚙️ Типи прибирання (надбавка до бази)</div>
+      
+      <div class="price-row">
+        <span class="price-name">🧼 Генеральне прибирання</span>
+        <span><span class="price-value">+15%</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-name">🏗 Після ремонту / будівництва</span>
+        <span><span class="price-value">+35–55%</span></span>
+      </div>
+      <div class="note">🔹 Після ремонту включає: видалення будівельного пилу, слідів фарби, цементу, очищення вентиляційних решіток.</div>
+    </div>
+
+    <!-- Додаткові послуги -->
+    <div class="card">
+      <div class="card-title">➕ Додаткові послуги</div>
+      
+      <div class="price-row">
+        <span class="price-name">🪟 Мийка вікон</span>
+        <span><span class="price-value">75</span> <span class="price-unit">грн/м²</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-name">🧶 Хімчистка ковроліну</span>
+        <span><span class="price-value">55-130</span> <span class="price-unit">грн/м²</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-name">🪟 Хімчистка штор</span>
+        <span><span class="price-value">130</span> <span class="price-unit">грн/м.п.</span></span>
+      </div>
+      
+      <div style="margin: 12px 0; font-weight: 600; color: var(--hint);">🛋️ Хімчистка меблів:</div>
+      <div class="price-row">
+        <span class="price-name">• Диван (за посадкове місце)</span>
+        <span><span class="price-value">420</span> <span class="price-unit">грн</span>  больше 3_ох мест -15%</span>
+      </div>
+      <div class="price-row">
+        <span class="price-name">• Крісло офісне</span>
+        <span><span class="price-value">320</span> <span class="price-unit">грн</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-name">• Крісло глубоке</span>
+        <span><span class="price-value">680</span> <span class="price-unit">грн</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-name">• Крісло домашнє</span>
+        <span><span class="price-value">450</span> <span class="price-unit">грн</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-name">• Пуфик / банкетка</span>
+        <span><span class="price-value">120</span> <span class="price-unit">грн</span></span>
+      </div>
+      
+      <div style="margin: 12px 0; font-weight: 600; color: var(--hint);">🔧 Кухня та техніка:</div>
+      <div class="price-row">
+        <span class="price-name">• Мийка холодильника (внутр.)</span>
+        <span><span class="price-value">450</span> <span class="price-unit">грн</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-name">• Мийка духовки / гриля</span>
+        <span><span class="price-value">350</span> <span class="price-unit">грн</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-name">• Мийка кухонної витяжки</span>
+        <span><span class="price-value">200-500</span> <span class="price-unit">грн</span></span>
+      </div>
+      <div class="price-row">
+        <span class="price-name">• Мийка шафок (внутрішня)</span>
+        <span>от площади обьекта<span class="price-value">+15%</span></span>
+      </div>
+    </div>
+
+    <!-- Гарантії -->
+    <div class="card">
+      <div class="card-title">✅ Що включено у вартість</div>
+      <div class="note">
+        • Професійна хімія та обладнання <br>
+        • Безпека для дітей та тварин <br>
+        • Фото-звіт після виконання <br>
+        • Гарантія 24 години на якість <br>
+        • Оплата після прийняття роботи
+      </div>
+    </div>
+
+    <a href="index.html" class="cta-btn" onclick="if (window.Telegram?.WebApp) { Telegram.WebApp.close(); } return false;">
+      🧹 Розрахувати вартість онлайн
+    </a>
+    
+    <div style="text-align: center; margin-top: 20px; font-size: 12px; color: var(--hint);">
+      Ціни оновлено: травень 2026 • Київ та область
+    </div>
+  </div>
+</body>
+</html>
